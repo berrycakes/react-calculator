@@ -1,38 +1,170 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+body {
+  background-color: #f2cda5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 0.8rem;
+  padding: 0 10px 10px 10px;
+  margin: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator-container {
+  background-color: #e7e6e6;
+  width: 350px;
+  height: 580px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-shadow: 10px 10px 65px 0px rgba(207, 107, 61, 0.8);
+          box-shadow: 10px 10px 65px 0px rgba(207, 107, 61, 0.8);
+}
+
+.display-container {
+  text-align: right;
+  padding: 10px 20px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  width: 300px;
+  height: 80px;
+  background-color: #bfbfa1;
+  border: black 5px solid;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.54) inset;
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.54) inset;
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.54) inset;
+}
+
+.buttons-container {
+  background-color: #cec0b6;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+}
+
+.digits-container {
+  display: -ms-grid;
+  display: grid;
+  gap: 0px 0px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2 / 6;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.calc-button {
+  color: #b04f1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  border: #e3d7c9 10px solid;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.calc-button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.two-span-button {
+  grid-column: auto / span 2;
+}
+
+.clear-button {
+  width: 150px;
+  border: #b04f1e 10px solid;
+  background-color: #dc6428;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.equals-button {
+  color: white;
+  background-color: #a49dab;
+  border: #8a8090 10px solid;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.operations-button,
+.delete-button {
+  color: white;
+  background-color: #eaaf72;
+  border: #e39843 10px solid;
 }
+
+.calc-button-zero {
+  width: 150px;
+}
+
+.result {
+  height: 50px;
+  font-size: 2rem;
+}
+
+.text {
+  text-align: right;
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  height: 30px;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=App.css.map */

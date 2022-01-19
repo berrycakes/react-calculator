@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+$screen: #bfbfa1;
+$calculator: #e7e6e6;
+$bg: #f2cda5;
+$silver: #cec0b6;
+$lightgray: #e3d7c9;
+$lightred: #dc6428;
+$darkred: #b04f1e;
+$darkyellow: #e39843;
+$lightyellow: #eaaf72;
+$darkblue: #8a8090;
+$lightblue: #a49dab;
+
+$numbers: 'Orbitron', sans-serif;
+$sans: 'Montserrat', sans-serif;
+
+body {
+  background-color: $bg;
+  display: flex;
+  justify-content: center;
+  font-family: $sans;
+}
+
+h1 {
+  text-align: center;
+}
+h2 {
+  font-size: 0.8rem;
+  padding: 0 10px 10px 10px;
+  margin: 0px;
+}
+
+.calculator-container {
+  background-color: $calculator;
+  width: 350px;
+  height: 580px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+  //   justify-content: center;
+  padding: 20px;
+  box-shadow: 10px 10px 65px 0px rgba(207, 107, 61, 0.8);
+}
+
+.display-container {
+  text-align: right;
+  padding: 10px 20px;
+  font-family: $numbers;
+  font-size: 2rem;
+  width: 300px;
+  height: 80px;
+  background-color: $screen;
+  border: rgba(0, 0, 0, 1) 5px solid;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.54) inset;
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.54) inset;
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.54) inset;
+}
+
+.buttons-container {
+  background-color: $silver;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+}
+
+.digits-container {
+  display: grid;
+  gap: 0px 0px;
+  grid-column: 1 / 4;
+  grid-row: 2 / 6;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.calc-button {
+  color: $darkred;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+  border: #e3d7c9 10px solid;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-family: $sans;
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.two-span-button {
+  grid-column: auto / span 2;
+}
+.clear-button {
+  width: 150px;
+  border: $darkred 10px solid;
+  background-color: $lightred;
+  color: white;
+}
+.equals-button {
+  color: white;
+  background-color: $lightblue;
+  border: $darkblue 10px solid;
+}
+.operations-button,
+.delete-button {
+  color: white;
+  background-color: $lightyellow;
+  border: $darkyellow 10px solid;
+}
+
+.calc-button-zero {
+  width: 150px;
+}
+
+.result {
+  height: 50px;
+  font-size: 2rem;
+}
+
+.text {
+  text-align: right;
+  overflow-wrap: break-word;
+  margin-top: 10px;
+  height: 30px;
+  font-size: 1rem;
+}
